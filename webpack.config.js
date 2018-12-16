@@ -7,7 +7,7 @@ module.exports = (env, argv) => {
     entry: './src/js/app.js',
     output: {
       filename: 'bundle.js',
-      path: path.join(__dirname, 'js')
+      path: path.join(__dirname, 'docs/js')
     },
     module: {
       rules: [
