@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/app.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/app.jsx");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -23762,15 +23762,17 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./src/js/app.js":
-/*!***********************!*\
-  !*** ./src/js/app.js ***!
-  \***********************/
+/***/ "./src/js/app.jsx":
+/*!************************!*\
+  !*** ./src/js/app.jsx ***!
+  \************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
@@ -23782,15 +23784,121 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 
 __webpack_require__(/*! ../css/index.css */ "./src/css/index.css");
 
+var _game = __webpack_require__(/*! ./modules/game.jsx */ "./src/js/modules/game.jsx");
+
+var _game2 = _interopRequireDefault(_game);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 console.log('launch app.js');
 
-_reactDom2.default.render(_react2.default.createElement(
-  'h1',
-  null,
-  'Hello TicTacToe!'
-), document.getElementById('root'));
+var App = function (_React$Component) {
+  _inherits(App, _React$Component);
+
+  function App() {
+    _classCallCheck(this, App);
+
+    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+  }
+
+  _createClass(App, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'main' },
+        _react2.default.createElement(
+          'h1',
+          null,
+          'Hello TicTacToe!'
+        ),
+        _react2.default.createElement(
+          'h2',
+          null,
+          'Bye!'
+        ),
+        _react2.default.createElement(_game2.default, null)
+      );
+    }
+  }]);
+
+  return App;
+}(_react2.default.Component);
+
+_reactDom2.default.render(_react2.default.createElement(App, null), document.getElementById('root'));
+
+/***/ }),
+
+/***/ "./src/js/modules/game.jsx":
+/*!*********************************!*\
+  !*** ./src/js/modules/game.jsx ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Game = function (_React$Component) {
+  _inherits(Game, _React$Component);
+
+  function Game() {
+    _classCallCheck(this, Game);
+
+    return _possibleConstructorReturn(this, (Game.__proto__ || Object.getPrototypeOf(Game)).apply(this, arguments));
+  }
+
+  _createClass(Game, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        { className: "game" },
+        _react2.default.createElement(
+          "div",
+          { className: "game-board" },
+          _react2.default.createElement(
+            "div",
+            { className: "game-info" },
+            _react2.default.createElement(
+              "div",
+              null,
+              "Show gameinfo: Now player X"
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return Game;
+}(_react2.default.Component);
+
+exports.default = Game;
 
 /***/ })
 

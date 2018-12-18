@@ -4,7 +4,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 module.exports = (env, argv) => {
   const IS_DEVELOPMENT = argv.mode === 'development';
   return {
-    entry: './src/js/app.js',
+    entry: './src/js/app.jsx',
     output: {
       filename: 'bundle.js',
       path: path.join(__dirname, 'docs/js')
@@ -13,12 +13,18 @@ module.exports = (env, argv) => {
       rules: [
         {
           enforce: 'pre',
-          test: /\.js$/,
+          test: [
+            /\.js$/,
+            /\.jsx$/
+          ],
           exclude: /node_modules/,
           loader: 'eslint-loader'
         },
         {
-          test: /\.js$/,
+          test: [
+            /\.js$/,
+            /\.jsx$/
+          ],
           exclude: /node_modules/,
           loader: 'babel-loader',
           options: {

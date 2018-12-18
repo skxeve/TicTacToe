@@ -21,6 +21,36 @@
     }
   },
   rules: {
-    "no-console": "off"
+    semi: "error",
+    indent: [
+      "error",
+      2,
+      {"SwitchCase": 1}
+    ],
+    constructor-super: 2,
+    no-this-before-super: 2,
+    no-var: 2,
+    complexity: [1, 3],
+    no-else-return: 1,
+    no-self-compare: 2,
+    quote-props: 2,//予約語キー等
+    no-extra-parens: [2, 'functions'],//余分な括弧
+    max-params: [1, 3],
+    max-statements: [1, 12],
+    keyword-spacing: "warn",
+    space-before-blocks: "warn",
+    sort-vars: "warn",
+    no-console: "off",
+    no-unused-vars: "warn",
+    react/jsx-no-undef: 2,
+    react/jsx-uses-react: 2,
+    react/jsx-uses-vars: 2,
+    react/no-did-mount-set-state: 2,
+    react/no-did-update-set-state: 2,
+    react/no-multi-comp: 2,
+    react/no-unknown-property: 2,
+    react/prop-types: 2,
+    react/react-in-jsx-scope: 2,
+    react/self-closing-comp: 2
   }
 }
