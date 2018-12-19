@@ -10,7 +10,6 @@ class App extends React.Component {
     return (
       <div className="main">
         <h1>Hello TicTacToe!</h1>
-        <h2>Bye!</h2>
         <Game />
       </div>
     );
