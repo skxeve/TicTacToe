@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function Square(props) {
   const style = props.isInWinnerLine ? { "color": "blue", "fontWeight": "bold", } : {};
@@ -8,3 +9,9 @@ export default function Square(props) {
     </button>
   );
 }
+
+Square.propTypes = {
+  "isInWinnerLine": PropTypes.bool,
+  "onClick": PropTypes.func,
+  "value": PropTypes.string,
+};
